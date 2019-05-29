@@ -7,4 +7,4 @@ RUN apt update && \
 	apt install -y spamassassin \
 		spampd rsyslog pyzor
 
-CMD rsyslogd;spampd --debug --nodetach --port=10029 --relayhost=opensmtpd:10030 --tagall --log-rules-hit --maxsize=2048
+CMD rsyslogd;spampd --debug --nodetach --host=0.0.0.0:10029 --relayhost=opensmtpd:10030 --tagall --log-rules-hit --maxsize=2048

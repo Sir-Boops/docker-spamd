@@ -5,6 +5,6 @@ SHELL ["bash", "-c"]
 RUN apt update && \
 	apt dist-upgrade -y && \
 	apt install -y spamassassin \
-		spampd rsyslog pyzor
+		spampd rsyslog pyzor razor
 
 CMD rsyslogd;spampd --debug --nodetach --host=0.0.0.0:10029 --relayhost=opensmtpd:10030 --tagall --log-rules-hit --maxsize=2048
